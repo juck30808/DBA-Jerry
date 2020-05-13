@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />        
+    </head>
+    <body>
+        <h1>系統登入</h1>
+        <hr/>
+        <h2>輸入帳號密碼</h2>
+        帳號:<input type="text" name="acc"><br/>
+        密碼:<input type="password" name ="pas"><br/>
+        <input type ="button" onclick="send()" value="送出" /> 
+        <input type ="button" onclick="reset()" value="重填" />
+        <br/><br/><hr/>
+        <h2>非同步訊息</h2>
+        訊息欄:<input type="text" name="message"/>
+        <script>
+            function reset(){
+                document.getElementsByName("acc")[0].value = "";
+                document.getElementsByName("pas")[0].value = "";
+            }
+            function send(){
+                let xmlhttp;
+                if(window.ActiveXObject){
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }else if(window.XMLHttpRequest){
+                    xmlhttp = new XMLHttpRequest();
+                }
+
+                let acc = document.getElementsByName("acc")[0].value;
+                let pas = document.getElementsByName("pas")[0].value;
+                let data = "acc=" + acc + "&" +"pas=" + pas;
+                //alert(data);
+
+                xmlhttp.open("POST","login.php",true);
+                xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+                xmlhttp.send(data);
+                xmlhttp.onreadystatechange = ()=> {
+                    if(xmlhttp.readyState ==4){
+                        if(xmlhttp.status == 200){
+                            let rstr = xmlhttp.responseText;
+                            document.getElementsByName("message")[0].value = rstr;
+                        }
+                    }
+                }
+
+            }
+        </script>
+    </body>
+</html>
