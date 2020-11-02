@@ -1,0 +1,1 @@
+drop table student, course, sc, teacher, dept;

@@ -1,0 +1,1 @@
+drop view CS_STUDENT
