@@ -1,1 +1,0 @@
-alter table student add AGE int;

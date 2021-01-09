@@ -14,7 +14,7 @@
     switch($_POST['button']){
             case '新增':
 
-            $link=mysqli_connect('localhost','root','','class');
+            $link=mysqli_connect('localhost','root','root','class');
             mysqli_query($link,"SET NAMES utf8");
             $sql="INSERT INTO `score`(`no1`, `name1`, `exam`, `homework`, `project`) "
             ."VALUES ('".$_POST['no1']."','".$_POST['name1']."','".$_POST['exam']."','"

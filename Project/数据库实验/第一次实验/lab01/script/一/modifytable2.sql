@@ -1,1 +1,0 @@
-alter table Student modify column AGE smallint;

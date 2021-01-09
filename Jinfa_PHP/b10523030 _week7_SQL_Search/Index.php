@@ -3,24 +3,15 @@
 		<meta charset="utf-8" />
 		<title>index</title>
 		<?php
-        // $mysqli = new mysqli('localhost', 'root', '', 'testdb');
-        // if ($mysqli->errno){
-        //     echo "資料庫連接錯誤!<br>";
-        //     exit();
-        // }else{
-        //     echo "資料庫連接成功!<br>";
-        // }
-        $mysqli = new mysqli('localhost', 'root', '') or die("連接失敗");
-        $dbname = "testdb";
-        if (!$mysqli->select_db($dbname))
-            die("無法開啟 $dbname 資料庫 <br>");
-        else
-            echo("開啟 $dbname 資料庫 成功!! <br>");
-        
-        $mysqli->query("SET NAMES utf8");
+	        $mysqli = new mysqli('localhost', 'root', '') or die("連接失敗");
+	        $dbname = "testdb";
+	        if (!$mysqli->select_db($dbname))
+	            die("無法開啟 $dbname 資料庫 <br>");
+	        else
+	            echo("開啟 $dbname 資料庫 成功!! <br>");
+	        $mysqli->query("SET NAMES utf8");
     	?>
 	</head>
-
 
 	<body>
 		<h1>資料庫管理系統</h1>

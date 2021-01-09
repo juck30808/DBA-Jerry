@@ -1,7 +1,0 @@
-CREATE TABLE Course (
-    CNO INT,
-    CNAME CHAR(20) NOT NULL,
-    TNO INT,
-    CREDIT INT,
-    PRIMARY KEY (CNO,TNO)
-)
